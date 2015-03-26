@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0071)http://www.zhangxinxu.com/study/201001/css3-animate-3d-effect-demo.html -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>http</title>
+
+<style type="text/css">
+	body{ padding-top: 50px; }
+    *{ text-align: center; }
+    #content{ padding: 10px; }
+</style>
+
+</head>
+
+<body>
+
+<div id="content"></div>
+
+<button id="bt">点击测试</button><br>
+
+<script type="text/javascript" src="Http.js"></script>
+
+<script type="text/javascript">
+
+    document.getElementById('bt').onclick = function(){
+
+    	var request = Http.post("test.php", {t: "t"});
+
+	   	request.onData = function(response){
+	   		document.getElementById('content').innerHTML = response;
+	   	}
+
+	   	request.onError = function(error){
+	   		document.getElementById('content').innerHTML = error;
+	   	}
+    };
+
+
+
+</script>
+
+
+</html>
+<!--
+220  258   381
+
+237
+DocumentRoot "/Library/WebServer/Documents"
+<Directory "/Library/WebServer/Documents">
+
+-->
